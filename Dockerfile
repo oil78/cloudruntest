@@ -1,0 +1,13 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY app.py .
+
+ENV PORT=8080
+ENV APP_VERSION=v1
+ENV FEATURE_NEW_SCORER=false
+ENV EXTRA_DELAY_MS=0
+ENV ERROR_RATE=0.0
+
+EXPOSE 8080
+CMD ["python", "-u", "app.py"]
